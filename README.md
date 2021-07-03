@@ -1,0 +1,1 @@
+# kubernetes_percona_psql
