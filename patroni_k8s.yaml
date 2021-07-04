@@ -29,7 +29,7 @@ spec:
       serviceAccountName: patronidemo
       containers:
       - name: *cluster_name
-        image: patroni  # docker build -t patroni .
+        image: tixsalvador/patroni 
         imagePullPolicy: IfNotPresent
         readinessProbe:
           httpGet:
