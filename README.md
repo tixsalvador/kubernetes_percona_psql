@@ -12,3 +12,6 @@ $ docker build -t patroni patroni_image/.
 $ docker tag patroni:<version> <docker_hub_user>/<image_name>
 $ docker push <docker_hub_user>/<image_name>
 ```
+Once patroni image is uploaded to ttps://hub.docker.com deploy kubernetes manifest
+```sh
+```
