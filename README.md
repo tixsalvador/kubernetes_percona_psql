@@ -1,6 +1,6 @@
 # kubernetes_percona_psql
 ## Installing Percona Postgresql in Kubernetes
-### Option 1
+### Option 1 - Using manifest file
 Login to docker hub
 ```sh
 $ docker login
@@ -14,4 +14,5 @@ $ docker push <docker_hub_user>/<image_name>
 ```
 Once patroni image is uploaded to ttps://hub.docker.com deploy kubernetes manifest
 ```sh
+$ kubectl create -f patroni_k8s.yaml
 ```
