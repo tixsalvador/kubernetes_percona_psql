@@ -1,0 +1,42 @@
+# This is for dynamic nfs
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgdata-patronidemo-0
+  labels:
+    app: wordpress
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgdata-patronidemo-1
+  labels:
+    app: wordpress
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgdata-patronidemo-2
+  labels:
+    app: wordpress
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

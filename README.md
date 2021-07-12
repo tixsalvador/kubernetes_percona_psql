@@ -12,7 +12,22 @@ $ docker build -t patroni patroni_image/.
 $ docker tag patroni:<version> <docker_hub_user>/<image_name>
 $ docker push <docker_hub_user>/<image_name>
 ```
-Once patroni image is uploaded to ttps://hub.docker.com deploy kubernetes manifest
+Create PVC for statefuleset replicas
+```sh
+$ kubectl -f patroni_pvc.yaml
+```
+Once pvc's are created and patroni image has been uploaded to https://hub.docker.com deploy kubernetes manifest
 ```sh
 $ kubectl create -f patroni_k8s.yaml
+Added lines below for VolumeClaimTemplate use for dynamic nfs
+---
+volumeClaimTemplates:
+- metadata:
+    name: pgdata
+  spec:
+    accessModes: [ "ReadWriteOnce" ]
+    resources:
+      requests:
+        storage: 1Gi
+---
 ```

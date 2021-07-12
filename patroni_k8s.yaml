@@ -32,7 +32,7 @@ spec:
       serviceAccountName: patronidemo
       containers:
       - name: *cluster_name
-        image: tixsalvador/patroni 
+        image: tixsalvador/patroni
         imagePullPolicy: IfNotPresent
         readinessProbe:
           httpGet:
@@ -96,9 +96,20 @@ spec:
         - name: PATRONI_RESTAPI_LISTEN
           value: '0.0.0.0:8008'
       terminationGracePeriodSeconds: 0
-      volumes:
-      - name: pgdata
-        emptyDir: {}
+  # Use for  dynamic nfs
+  volumeClaimTemplates:
+  - metadata:
+      name: pgdata
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+# This is for testing local pgdata mount
+#      volumes:
+#      - name: pgdata
+#        emptyDir: {}
+# THis for uing spilo
 #  volumeClaimTemplates:
 #  - metadata:
 #      labels:
