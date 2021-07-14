@@ -47,6 +47,7 @@ $ docker build -t <spilo> postgres-appliance/.
 $ docker tag <spilo> tixsalvador/<spilo>
 $ docker login quay.io
 $ docker run tixsalvador/<spilo>  echo "fun" > newfile
+$ docker ps -l  # to get contrainer id
 $ docker commit  <containerid>  quay.io/tixsalvador/<spilo>
 $ docker push quay.io/tixsalvador/<spilo>
 ```
