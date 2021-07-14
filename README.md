@@ -31,3 +31,22 @@ volumeClaimTemplates:
         storage: 1Gi
 ---
 ```
+### Option 2 - Using Spilo
+Build docker image and upload it to dockerhub
+```sh
+$ git clone https://github.com/tixsalvador/spilo.git
+$ docker build -t <spilo> postgres-appliance/.
+$ docker tag <spilo> tixsalvador/<spilo>
+$ docker login
+$ docker push tixsalvador/<spilo>
+```
+Optional: Build docker image and upload it to quay.io
+```sh
+$ git clone https://github.com/tixsalvador/spilo.git
+$ docker build -t <spilo> postgres-appliance/.
+$ docker tag <spilo> tixsalvador/<spilo>
+$ docker login quay.io
+$ docker run tixsalvador/<spilo>  echo "fun" > newfile
+$ docker commit  <containerid>  quay.io/tixsalvador/<spilo>
+$ docker push quay.io/tixsalvador/<spilo>
+```
