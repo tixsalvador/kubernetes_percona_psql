@@ -30,8 +30,6 @@ volumeClaimTemplates:
       requests:
         storage: 1Gi
 ---
-Run the patroni manifest file
-$ kubectl create -f patroni_k8s.yaml
 ```
 ### Option 2 - Using Spilo
 Build docker image and upload it to dockerhub
