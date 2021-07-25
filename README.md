@@ -47,4 +47,10 @@ $ docker build -t <spilo> postgres-appliance/.
 $ docker tag <spilo> quay.io/tixsalvador/<spilo>
 $ docker login quay.io
 $ docker push quay.io/tixsalvador/<spilo>
+
 ```
+Build spilo
+```sh
+$ kubectl create -f patroni_spilo.yaml
+```
+
