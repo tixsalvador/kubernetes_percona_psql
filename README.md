@@ -53,4 +53,5 @@ Build spilo
 ```sh
 $ kubectl create -f patroni_spilo.yaml
 ```
-
+### Option 3 - Using CrunchyData
+https://github.com/CrunchyData/postgres-operator
